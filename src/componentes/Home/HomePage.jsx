@@ -16,6 +16,8 @@ function HomePage () {
       <CovertPhoto/>
       <Content/>
       <Cart/>
+      <Cart/>
+      <Cart/>
       <Benefit/>  
       <Promo/>
       <TopsellContent/>
