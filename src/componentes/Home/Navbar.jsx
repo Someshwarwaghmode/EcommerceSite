@@ -27,11 +27,19 @@ const Navbar = () => {
 export default Navbar;
 
 const Container = styled.section`
-    
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size:1em;
+    font-size: 1em;
+    position: fixed; /* Fixes navbar at the top */
+    top: 0; /* Ensures it sticks to the top */
+    left: 0; /* Aligns it to the left edge */
+    width: 100%; /* Makes navbar span the full width */
+    height:2em;
+    background-color: white; /* Ensures it stays visible */
+    z-index: 1000; /* Keeps navbar above other elements */
+    padding: 10px 0; /* Optional: Adjust padding for better spacing */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1)
     
 
 `;

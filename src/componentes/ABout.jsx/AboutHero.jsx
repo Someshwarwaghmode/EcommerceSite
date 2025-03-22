@@ -19,7 +19,7 @@ const HeroImg = styled.img`
 const HeroContent = styled.h1`
     text-transform: uppercase;
     position: absolute;
-    top: 270px;
+    top: 200px;
     left: 110px;
     color:white;
     font-weight: 500;

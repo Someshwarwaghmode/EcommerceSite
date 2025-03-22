@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ContactForm = () => {
+    
     return (
         <Container>
             <ContactFormInfo>
@@ -10,16 +11,16 @@ const ContactForm = () => {
                     <NameAndEmail>
                         <span>
                         <Label>Name</Label><br></br>
-                        <Input type="text"></Input>
+                        <Input placeholder="Enter Your Name" type="text"></Input>
                         <br></br>
                         </span>
                         <span>
                         <Label>Email</Label><br></br>
-                        <Input type="email"></Input>
+                        <Input placeholder="Enter Email" type="email"></Input>
                         </span>
                     </NameAndEmail>
-                    <MsgLabel id="story" name="story" rows="5" cols="33">Message</MsgLabel><br></br>
-                    <TextArea>
+                    <MsgLabel>Message</MsgLabel><br></br>
+                    <TextArea  id="story" name="story" rows="5" cols="33" placeholder="Feel Free to contact us plz don't Hezitate">
 
                     </TextArea>
                 </FORM>
@@ -30,13 +31,13 @@ const ContactForm = () => {
             <ContactInfo >
                 <VisitUs>
                     <H>Visit Us</H>
-                    <P>UET Lahore, Punjab, Pakistan</P>
-                    <P>Phone: +923039898987</P>
+                    <P>Tq.Parli, destrict.Beed, Maharastra-431128</P>
+                    <P>Phone: +917666473300</P>
                 </VisitUs>
                 <GetInTouch>
                     <H>Get In Touch</H>
                     <P>You can get in touch with us on this provided email. </P>
-                    <P>Email: hmjawad087@gmail.com</P>
+                    <P>Email: someshwarwaghmode222@gmail.com</P>
                 </GetInTouch>
             </ContactInfo>
         </Container>
@@ -46,23 +47,53 @@ const ContactForm = () => {
 export default ContactForm;
 const Container = styled.section`
     display: flex;
+    justify-content: space-around;
+    margin-top:3em;
 
 `;
 const ContactFormInfo = styled.div``;
 const Heading = styled.h1``;
-const HP = styled.p``;
-const FORM = styled.form``;
-const Input = styled.input``;
-const Label = styled.label``;
+const HP = styled.p`
+    margin-top:2em;
+`;
+const FORM = styled.form`
+    margin-top:2em;
+    display: flex;
+    flex-direction: column;
+`;
+const Input = styled.input`
+    padding:0.5em;
+    width:20em;
+`;
+const Label = styled.label`
+    margin-top:2em;
+`;
 const ContactInfo = styled.section``;
 const NameAndEmail = styled.div`
     display: flex;
     gap:2em;
 `;
-const TextArea = styled.textarea``;
-const MsgLabel = styled.label``;
+const TextArea = styled.textarea`
+    padding:0.5em;
+    width:43.6em;
+    height:12em;
+`;
+const MsgLabel = styled.label`
+    margin-top:2em;
+`;
 const VisitUs = styled.div``;
 const H = styled.h2``;
 const P = styled.p``;
 const GetInTouch = styled.div``;
-const Button = styled.button``;
+const Button = styled.button`
+    margin-top:1em;
+    background-color:blue;
+    padding:0.5em;
+    border:2px solid black;
+    border-radius: 5px;
+    &:hover{
+        background-color:white;
+        cursor: pointer;
+        color:blue;
+    }
+`;
