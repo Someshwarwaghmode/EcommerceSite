@@ -25,7 +25,7 @@ const ContactForm = () => {
         if (formRef.current) {
             formRef.current.reset();
         }
-        fetch("https://ecommerce-site-git-main-someswars-projects-280902a8.vercel.app/contact", {
+        fetch("http://localhost:5000/submit", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
