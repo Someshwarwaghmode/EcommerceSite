@@ -10,7 +10,7 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "Pass@123",
-  database: "your_database_name",
+  database: "contactUs",
 });
 
 // Make sure connection works
