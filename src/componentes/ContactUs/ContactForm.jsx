@@ -1,32 +1,70 @@
 import styled from "styled-components";
+import { useRef, useState } from "react";
+
 
 const ContactForm = () => {
-    
+    const formRef = useRef(null);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [messege, setMessege] = useState("");
+    const handleClick = () => {
+        console.log(name);
+        console.log(email);
+        console.log(messege);
+        if(name=="" || email=="" || messege==""){
+            alert("First Fill the Information");
+        }
+        else if(!email.includes("@")) {
+            alert("Invalid email. Please include '@' in your email address.");
+            return;
+        }
+        else {
+            alert("Message sent. We’ll contact you soon.");
+        }
+
+        if (formRef.current) {
+            formRef.current.reset();
+        }
+        fetch("http://localhost:5000/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email, message: messege }),
+          })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.error("❌ Error:", err));
+          
+        setName("");
+        setEmail("");
+        setMessege("");
+    };
     return (
         <Container>
             <ContactFormInfo>
                 <Heading>We would love to hear from you.</Heading>
                 <HP>If you have any query or any type of suggestion, you can contact us here. We would love to hear from you.</HP>
-                <FORM>
+                <FORM ref={formRef}>
                     <NameAndEmail>
                         <span>
-                        <Label>Name</Label><br></br>
-                        <Input placeholder="Enter Your Name" type="text"></Input>
-                        <br></br>
+                            <Label>Name</Label><br></br>
+                            <Input placeholder="Enter Your Name" type="text" value={name} onChange={(e) => setName(e.target.value)} ></Input>
+                            <br></br>
                         </span>
                         <span>
-                        <Label>Email</Label><br></br>
-                        <Input placeholder="Enter Email" type="email"></Input>
+                            <Label>Email</Label><br></br>
+                            <Input placeholder="Enter Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}></Input>
                         </span>
                     </NameAndEmail>
                     <MsgLabel>Message</MsgLabel><br></br>
-                    <TextArea  id="story" name="story" rows="5" cols="33" placeholder="Feel Free to contact us plz don't Hezitate">
+                    <TextArea id="story" name="story" rows="5" cols="33" placeholder="Feel Free to contact us plz don't Hezitate" value={messege} onChange={(e) => setMessege(e.target.value)}>
 
                     </TextArea>
                 </FORM>
-                <Button>Send Message</Button>
+                <Button onClick={handleClick}>Send Message</Button>
             </ContactFormInfo>
-            
+
 
             <ContactInfo >
                 <VisitUs>

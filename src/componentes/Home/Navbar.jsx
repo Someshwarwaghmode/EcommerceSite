@@ -10,8 +10,8 @@ const Navbar = () => {
             <Menu>
                 <UnorderList>
                     <Listitem><Link to="/">HOME</Link></Listitem>
-                    <Listitem><Link to="/ABOUT">ABOUT</Link ></Listitem>
-                    <Listitem><Link to="/CONTACT US">CONTACT US</Link></Listitem>
+                    <Listitem><Link to="/about">ABOUT</Link ></Listitem>
+                    <Listitem><Link to="/contact">CONTACT US</Link></Listitem>
                 </UnorderList>
             </Menu>
             <MenuIcons>
